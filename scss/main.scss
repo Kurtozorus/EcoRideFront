@@ -4,6 +4,7 @@
 html{
     position: relative;
     min-height: 100%;
+    background-color: $primary;
 }
 
 main {
@@ -29,9 +30,14 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 20px;
 }
 .big-title {
-        padding-top: 70px;
+        padding-top: 200px;
     }
-
+.btn-research {
+    width: 100%;
+}
+.main-content {
+    background-color: #A8D5BA;
+}
 .hero-scene {
     position: relative;
     &::before {
@@ -50,6 +56,21 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.input-group-text {
+    background-color: white;
+    border-right: none;
+}
+
+.form-control {
+    border-left: none;
+    box-shadow: none;
+}
+
+.input-group {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
 .hero-scene_content {
     display: flex;
     flex-direction: column;
@@ -58,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 214px;
     color: white;
 }
+
 @media (min-width: 992px) {
     p{
         font-size: 18px;
@@ -73,6 +95,23 @@ h1, h2, h3, h4, h5, h6 {
         height: 615px;
     }
     .big-title {
-        padding-top: 250px;
+        position: relative;
+        top: 100px;
+    }
+    .desktop-research {
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: 220px;
+    }
+    .size-research {
+        width: 250px;
+    }
+    .research-background {
+        height: 100px;
+        background: #ffffff;
+    }
+    .main-content {
+        height: 700px;
     }
 }

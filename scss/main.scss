@@ -37,6 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .main-content {
     background-color: #A8D5BA;
+    padding-top: 100px;
 }
 .hero-scene {
     position: relative;
@@ -79,6 +80,26 @@ h1, h2, h3, h4, h5, h6 {
     height: 214px;
     color: white;
 }
+.main-content {
+        height: 600px;
+    }
+#first-content {
+    margin-top: 50px;
+    background-image: url(/images/asap-pang-Us2KDzmnUCo-unsplash.jpg);
+    background-size: cover;
+    width: 155px;
+    height: 350px;
+}
+
+#second-content {
+    margin-top: 50px;
+    width: 155px;
+    height: 350px;
+}
+#second-content p {
+    height: 334px;
+}
+
 
 @media (min-width: 992px) {
     p{
@@ -92,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
         height: 32px;
     }
     .hero-scene_content {
-        height: 615px;
+        height:555px;
     }
     .big-title {
         position: relative;
@@ -102,7 +123,7 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
         align-items: center;
         position: relative;
-        top: 220px;
+        top: 190px;
     }
     .size-research {
         width: 250px;
@@ -113,5 +134,22 @@ h1, h2, h3, h4, h5, h6 {
     }
     .main-content {
         height: 700px;
+        padding-top: 0px;
+        padding-bottom: 100px;
     }
+    #first-content {
+    background-image: url(/images/asap-pang-Us2KDzmnUCo-unsplash.jpg);
+    background-size: cover;
+    width: 398px;
+    height: 600px;
+}
+
+#second-content {
+    width: 398px;
+    height: 600px;
+}
+#second-content p {
+    height: 334px;
+}
+
 }

@@ -6,5 +6,61 @@
       </h2>
       <p class="text-primary">Trouver le covoiturage qui vous convient !</p>
     </div>
+    <div class="container">
+      <form id="routeForm">
+        <div class="desktop-research">
+          <div class="d-flex justify-content-center align-items-center"></div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">
+              <i class="bi bi-geo-alt"></i>
+            </span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Point de départ"
+            />
+          </div>
+          <div
+            class="d-flex justify-content-center align-items-center gap-1 mb-3"
+          >
+            <button
+              class="btn btn-secondary d-flex justify-content-center align-items-center"
+            >
+              <i class="bi bi-arrow-down-up"></i>
+            </button>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">
+              <i class="bi bi-geo"></i>
+            </span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Point d'arrivée"
+            />
+          </div>
+          <div class="d-flex">
+            <div class="input-group size-research mb-3">
+              <input
+                type="date"
+                id="departureDate"
+                class="form-control"
+                placeholder="Aujourd’hui"
+              />
+            </div>
+            <div class="input-group size-research mb-3">
+              <input
+                type="date"
+                id="returnDate"
+                class="form-control"
+                placeholder="Retour"
+              />
+            </div>
+          </div>
+          <button class="btn btn-secondary w-100 mb-3">Rechercher</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
+<div class="covoiturage-main-content"></div>

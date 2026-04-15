@@ -12011,7 +12011,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 .big-title {
-  margin-top: 200px;
+  margin-top: 300px;
 }
 
 .btn-research {
@@ -12063,7 +12063,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 .main-content {
   background-color: #A8D5BA;
-  padding-top: 100px;
+  padding-top: 150px;
   height: 600px;
 }
 
@@ -12114,11 +12114,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 .big-title-covoiturage {
-  margin-top: 75px;
+  margin-top: 360px;
 }
 
 .big-title-covoiturage h2, .big-title-covoiturage .h2 {
   -webkit-text-stroke: black 0.25px;
+}
+
+.covoiturage-main-content {
+  background-color: #A8D5BA;
+  height: 600px;
 }
 
 @media (min-width: 992px) {

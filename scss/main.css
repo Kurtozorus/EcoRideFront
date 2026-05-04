@@ -11980,14 +11980,15 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/* Styles globaux */
 html {
   position: relative;
   min-height: 100%;
-  background-color: #DEEEEA;
+  background-color: #A8D5BA;
 }
 
 main {
-  margin-bottom: 250px; /* Hauteur du footer */
+  margin-bottom: 300px; /* Hauteur du footer */
 }
 
 footer {
@@ -12006,6 +12007,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-size: 20px;
 }
 
+/* Styles Home page */
 .paddingright {
   padding-right: 20px;
 }
@@ -12034,11 +12036,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 .hero-scene * {
   position: relative;
-}
-
-.input-group-text {
-  background-color: white;
-  border-right: none;
 }
 
 .form-control {
@@ -12085,6 +12082,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   height: 334px;
 }
 
+/* Styles Covoiturage page */
 .covoiturage-scene {
   position: relative;
 }
@@ -12110,23 +12108,70 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   justify-content: center;
   align-items: center;
   height: 214px;
-  color: white;
 }
 
 .big-title-covoiturage {
-  margin-top: 360px;
+  margin-top: 75px;
 }
 
 .big-title-covoiturage h2, .big-title-covoiturage .h2 {
   -webkit-text-stroke: black 0.25px;
 }
 
+.research-background {
+  height: 0px;
+}
+
+.base-research-covoiturage {
+  position: relative;
+  top: -20px;
+}
+
 .covoiturage-main-content {
+  top: 100px;
+  min-height: 50vh;
   background-color: #A8D5BA;
-  height: 600px;
+}
+
+/* Styles exemple covoiturage */
+.covoiturage-info-content {
+  bottom: 500px;
+}
+
+.arrival-time {
+  padding-left: 40px;
+}
+
+.departure-time {
+  padding-right: 40px;
+}
+
+.box-exemple-time {
+  display: flex;
+  justify-content: center;
+  color: #000;
+}
+
+.trait {
+  padding: 0 0 20px 50px;
+  top: 9px;
+  border-top: 2px solid #000;
+  position: relative;
+}
+
+.time-spend {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.covoiturage-card {
+  padding: 5px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 992px) {
+  /* Style global */
   p {
     font-size: 18px;
   }
@@ -12137,15 +12182,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     width: 32px;
     height: 32px;
   }
+  /* Style Home page */
   .hero-scene-content {
     height: 555px;
-  }
-  .covoiturage-scene-content {
-    height: 555px;
-  }
-  .big-title-covoiturage {
-    position: relative;
-    top: 80px;
   }
   .big-title {
     position: relative;
@@ -12155,7 +12194,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     display: flex;
     align-items: center;
     position: relative;
-    top: 190px;
+    top: 145px;
   }
   .size-research {
     width: 250px;
@@ -12181,5 +12220,43 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   }
   #second-content p {
     height: 334px;
+  }
+  /* Styles Covoiturage page */
+  .covoiturage-scene-content {
+    height: 555px;
+  }
+  .big-title-covoiturage {
+    margin-top: 250px;
+    position: relative;
+    top: 0px;
+  }
+  .base-research-covoiturage {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -70px;
+  }
+  .filter-desktop {
+    background-color: #fff;
+  }
+  /**teste**/
+  .form-control-xs {
+    height: 28px;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+  .form-check-input {
+    transform: scale(0.8); /* réduit le switch */
+  }
+  .modify-col {
+    width: 20%;
+  }
+  .form-check-input:checked {
+    background-color: #06f74e;
+    border-color: #2e0b70;
+  }
+  .form-check-input {
+    --bs-form-check-bg: #f50303;
   }
 }/*# sourceMappingURL=main.css.map */

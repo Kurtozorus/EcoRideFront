@@ -1,14 +1,15 @@
 @import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
 @import 'custom';
 
+/* Styles globaux */
 html{
     position: relative;
     min-height: 100%;
-    background-color: $primary;
+    background-color: $dark;
 }
 
 main {
-    margin-bottom: 250px; /* Hauteur du footer */
+    margin-bottom: 300px; /* Hauteur du footer */
 }
 
 footer {
@@ -26,6 +27,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-sans-serif;
     font-size: 20px;
 }
+/* Styles Home page */
+
 .paddingright {
     padding-right: 20px;
 }
@@ -53,10 +56,10 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.input-group-text {
-    background-color: white;
-    border-right: none;
-}
+// .input-group-text {
+//     background-color: white;
+//     border-right: none;
+// }
 
 .form-control {
     border-left: none;
@@ -99,6 +102,8 @@ h1, h2, h3, h4, h5, h6 {
     height: 334px;
 }
 
+/* Styles Covoiturage page */
+
 .covoiturage-scene {
     position: relative;
     &::before {
@@ -123,19 +128,61 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     height: 214px;
-    color: white;
+    
 }
 .big-title-covoiturage {
-    margin-top: 360px;
+    margin-top: 75px;
 }
 .big-title-covoiturage h2 {
     -webkit-text-stroke: black 0.25px;;
 }
-.covoiturage-main-content {
-    background-color: #A8D5BA;
-    height: 600px;
+.research-background {
+    height: 0px;
 }
+.base-research-covoiturage {
+    position: relative;
+    top: -20px;
+}
+.covoiturage-main-content {
+     top: 100px;
+     min-height: 50vh;
+     background-color: #A8D5BA;
+}
+/* Styles exemple covoiturage */
+.covoiturage-info-content {
+    bottom: 500px;
+}
+
+.arrival-time {
+    padding-left: 40px;
+} 
+.departure-time {
+    padding-right: 40px;
+}
+.box-exemple-time {
+    display: flex;
+    justify-content: center;
+    color: #000;
+}
+.trait {
+    padding: 0 0 20px 50px;
+    top: 9px;
+    border-top: 2px solid #000;
+    position: relative;
+}
+.time-spend {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.covoiturage-card {
+    // width: 26rem;
+    padding: 5px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 @media (min-width: 992px) {
+    /* Style global */
     p{
         font-size: 18px;
     }
@@ -146,15 +193,9 @@ h1, h2, h3, h4, h5, h6 {
         width: 32px;
         height: 32px;
     }
+    /* Style Home page */
     .hero-scene-content {
         height:555px;
-    }
-    .covoiturage-scene-content {
-        height:555px;
-    }
-    .big-title-covoiturage {
-        position: relative;
-        top: 80px;
     }
     .big-title {
         position: relative;
@@ -164,7 +205,7 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
         align-items: center;
         position: relative;
-        top: 190px;
+        top: 145px;
     }
     .size-research {
         width: 250px;
@@ -179,18 +220,63 @@ h1, h2, h3, h4, h5, h6 {
         padding-bottom: 100px;
     }
     #first-content {
-    background-image: url(/images/asap-pang-Us2KDzmnUCo-unsplash.jpg);
-    background-size: cover;
-    width: 398px;
-    height: 600px;
+        background-image: url(/images/asap-pang-Us2KDzmnUCo-unsplash.jpg);
+        background-size: cover;
+        width: 398px;
+        height: 600px;
+    }
+    #second-content {
+        width: 398px;
+        height: 600px;
+    }
+    #second-content p {
+        height: 334px;
+    }
+    
+    /* Styles Covoiturage page */
+    
+    .covoiturage-scene-content {
+        height:555px;
+    }
+    .big-title-covoiturage {
+        margin-top: 250px;
+        position: relative;
+        top: 0px;
+    }
+    .base-research-covoiturage {
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: -70px;
+    }
+    .filter-desktop {
+        background-color: #fff;
+    }
+    /**teste**/
+    .form-control-xs {
+    height: 28px;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 6px;
+    }
+    .form-check-input {
+        transform: scale(0.8); /* réduit le switch */
+    }
+    .modify-col {
+        width: 20%;
+    }
+    .form-check-input:checked {
+        background-color: #06f74e;
+        border-color: #2e0b70;
+    }
+    .form-check-input{
+        --bs-form-check-bg: #f50303;
+    }
 }
 
-#second-content {
-    width: 398px;
-    height: 600px;
-}
-#second-content p {
-    height: 334px;
-}
 
-}
+
+
+
+
+

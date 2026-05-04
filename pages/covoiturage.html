@@ -6,61 +6,381 @@
       </h2>
       <p class="text-primary">Trouver le covoiturage qui vous convient !</p>
     </div>
-    <div class="container">
-      <form id="routeForm">
-        <div class="desktop-research">
-          <div class="d-flex justify-content-center align-items-center"></div>
-          <div class="input-group mb-3">
-            <span class="input-group-text">
-              <i class="bi bi-geo-alt"></i>
-            </span>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Point de départ"
-            />
-          </div>
-          <div
-            class="d-flex justify-content-center align-items-center gap-1 mb-3"
+  </div>
+</div>
+<div class="container research-background"></div>
+<div class="covoiturage-main-content">
+  <div class="container">
+    <form id="routeForm">
+      <div class="base-research-covoiturage">
+        <div class="d-flex justify-content-center align-items-center"></div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">
+            <i class="bi bi-geo-alt"></i>
+          </span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Point de départ"
+          />
+        </div>
+        <div
+          class="d-flex justify-content-center align-items-center gap-1 mb-3"
+        >
+          <button
+            class="btn btn-secondary d-flex justify-content-center align-items-center"
           >
-            <button
-              class="btn btn-secondary d-flex justify-content-center align-items-center"
-            >
-              <i class="bi bi-arrow-down-up"></i>
-            </button>
-          </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text">
-              <i class="bi bi-geo"></i>
-            </span>
+            <i class="bi bi-arrow-down-up"></i>
+          </button>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">
+            <i class="bi bi-geo"></i>
+          </span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Point d'arrivée"
+          />
+        </div>
+        <div class="d-flex">
+          <div class="input-group size-research mb-3">
             <input
-              type="text"
+              type="date"
+              id="departureDate"
               class="form-control"
-              placeholder="Point d'arrivée"
+              placeholder="Aujourd’hui"
             />
           </div>
-          <div class="d-flex">
-            <div class="input-group size-research mb-3">
-              <input
-                type="date"
-                id="departureDate"
-                class="form-control"
-                placeholder="Aujourd’hui"
-              />
-            </div>
-            <div class="input-group size-research mb-3">
-              <input
-                type="date"
-                id="returnDate"
-                class="form-control"
-                placeholder="Retour"
-              />
-            </div>
+          <div class="input-group size-research mb-3">
+            <input
+              type="date"
+              id="returnDate"
+              class="form-control"
+              placeholder="Retour"
+            />
           </div>
-          <button class="btn btn-secondary w-100 mb-3">Rechercher</button>
+        </div>
+        <button class="btn btn-secondary w-100 mb-3">Rechercher</button>
+      </div>
+    </form>
+  </div>
+  <div>
+    <h2 class="text-primary text-center">Résultats de votre recherche Aller</h2>
+  </div>
+  <div class="filter-mobile d-md-none d-sm-none">
+    <div class="d-flex justify-content-center align-items-center gap-1">
+      <div class="d-flex justify-content-center align-items-center gap-1">
+        <button
+          class="btn btn-secondary d-flex justify-content-center align-items-center"
+          data-bs-toggle="modal"
+          data-bs-target="#filterModal"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-gear-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"
+            />
+          </svg>
+          Filtres
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div
+      class="filter-desktop d-none d-lg-flex align-items-center gap-2 p-2 w-70"
+    >
+      <form id="filterForm">
+        <!-- Switch -->
+        <div class="form-check form-switch m-0">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="ecoSwitch"
+            checked
+          />
+          <label class="form-check-label ms-1" for="ecoSwitch">
+            Voiture Electrique ?
+          </label>
+        </div>
+
+        <!-- Prix -->
+        <div class="d-flex align-items-center gap-1">
+          <input
+            type="number"
+            class="form-control"
+            min="0"
+            placeholder="Prix Min"
+          />
+
+          <input
+            type="number"
+            class="form-control"
+            min="0"
+            placeholder="Prix Max"
+          />
+          <!-- Temps -->
+          <input
+            type="number"
+            id="traveltimeInput"
+            name="traveltimeInput"
+            min="0"
+            class="form-control"
+            placeholder="Temps de trajet"
+          />
+
+          <!-- Note -->
+          <input
+            type="number"
+            id="noteInput"
+            name="noteInput"
+            min="0"
+            max="5"
+            class="form-control"
+            placeholder="★ Note du conducteur"
+          />
         </div>
       </form>
     </div>
   </div>
+
+  <div class="container-fluid result-research pt-4">
+    <div class="row row-cols-lg-4 g-4 d-flex justify-content-center">
+      <div class="col modify-col">
+        <div class="covoiturage-card bg-white">
+          <!-- Ligne trajet -->
+          <div class="box-exemple-time">
+            <div>
+              <span class="departure-time">20:00</span>
+            </div>
+            <div>
+              <span><i class="bi bi-record-circle"></i></span>
+              <span class="trait"></span>
+              <br />
+              <span class="departure-place">Romans</span>
+            </div>
+
+            <div>
+              <p class="me-2"><span class="time-spend ms-2">1</span>H</p>
+            </div>
+
+            <div>
+              <span class="trait"></span>
+              <span><i class="bi bi-record-circle"></i></span>
+              <br />
+              <span class="arrival-place">Lyon</span>
+            </div>
+
+            <span class="arrival-time">21:00</span>
+          </div>
+
+          <!-- Séparateur -->
+          <hr class="border border-black border-1 opacity-50 w-100" />
+
+          <!-- Utilisateur -->
+          <div class="d-flex align-items-center gap-2">
+            <span class="image-User rounded-circle"
+              ><img
+                src="/images/mauricio-sabino-LT4aKyxXUjw-unsplash.jpg"
+                width="40"
+                height="40"
+                class="rounded-circle"
+                alt=""
+            /></span>
+            <span class="name-User ms-3">Mélilylyloula</span>
+            <span class="image-Star ms-4"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="currentColor"
+                class="bi bi-star-half"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"
+                /></svg
+            ></span>
+            <button class="btn btn-secondary ms-auto">Détail</button>
+          </div>
+          <div class="d-flex align-items-center gap-2 pt-2">
+            <span class="image-Eco"
+              ><img src="/images/24065.jpg" width="32" height="32" alt=""
+            /></span>
+            <!-- Prix -->
+            <div class="mt-2">
+              <span class="mb-1 ms-4 me-2"
+                >Prix : <span class="price">150</span> Pts</span
+              >
+              <span class="ms-2"
+                ><span class="nb-Seat">4</span> place dispo</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col modify-col">
+        <div class="covoiturage-card bg-white">
+          <!-- Ligne trajet -->
+          <div class="box-exemple-time">
+            <div>
+              <span class="departure-time">20:00</span>
+            </div>
+            <div>
+              <span><i class="bi bi-record-circle"></i></span>
+              <span class="trait"></span>
+              <br />
+              <span class="departure-place">Romans</span>
+            </div>
+
+            <div>
+              <p class="me-2"><span class="time-spend ms-2">1</span>H</p>
+            </div>
+
+            <div>
+              <span class="trait"></span>
+              <span><i class="bi bi-record-circle"></i></span>
+              <br />
+              <span class="arrival-place">Lyon</span>
+            </div>
+
+            <span class="arrival-time">21:00</span>
+          </div>
+
+          <!-- Séparateur -->
+          <hr class="border border-black border-1 opacity-50 w-100" />
+
+          <!-- Utilisateur -->
+          <div class="d-flex align-items-center gap-2">
+            <span class="image-User rounded-circle"
+              ><img
+                src="/images/mauricio-sabino-LT4aKyxXUjw-unsplash.jpg"
+                width="40"
+                height="40"
+                class="rounded-circle"
+                alt=""
+            /></span>
+            <span class="name-User">Mélilylyloula</span>
+            <span class="image-Star ms-2"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="currentColor"
+                class="bi bi-star-half"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"
+                /></svg
+            ></span>
+            <button class="btn btn-secondary ms-auto">Détail</button>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="image-Eco"
+              ><img src="/images/24065.jpg" width="32" height="32" alt=""
+            /></span>
+            <!-- Prix -->
+            <div class="mt-2">
+              <span class="mb-1 ms-2 me-2"
+                >Prix : <span class="price">150</span> Pts</span
+              >
+              <span class="ms-2"
+                ><span class="nb-Seat">4</span> place dispo</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="covoiturage-main-content"></div>
+
+<!-- modal Filter -->
+
+<div
+  class="modal fade"
+  id="filterModal"
+  tabindex="-1"
+  aria-labelledby="filterModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="filterModalLabel">Filtre</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="filtermobileForm">
+          <!-- Switch -->
+          <div class="form-check form-switch m-0">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="ecomobileSwitch"
+              checked
+            />
+            <label class="form-check-label ms-1" for="ecoSwitch">
+              Voiture Electrique ?
+            </label>
+          </div>
+
+          <!-- Prix -->
+          <div class="d-flex flex-wrap align-items-center gap-1">
+            <input
+              type="number"
+              class="form-control"
+              min="0"
+              placeholder="Prix Min"
+            />
+
+            <input
+              type="number"
+              class="form-control"
+              min="0"
+              placeholder="Prix Max"
+            />
+            <!-- Temps -->
+            <input
+              type="number"
+              id="traveltimemobileInput"
+              name="traveltimemobileInput"
+              min="0"
+              class="form-control"
+              placeholder="Temps de trajet"
+            />
+
+            <!-- Note -->
+            <input
+              type="number"
+              id="notemobileInput"
+              name="notemobileInput"
+              min="0"
+              max="5"
+              class="form-control"
+              placeholder="★ Note du conducteur"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

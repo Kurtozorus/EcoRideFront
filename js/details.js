@@ -1,18 +1,3 @@
-function initHome() {
-  const today = new Date().toLocaleDateString("en-CA");
-
-  const departureDate = document.querySelector("#departureDate");
-  const returnDate = document.querySelector("#returnDate");
-
-  if (departureDate && returnDate) {
-    departureDate.value = today;
-    departureDate.min = today;
-    returnDate.min = today;
-  }
-}
-
-initHome();
-
 /*fonction qui affiche les étoiles en fonction de la note du conducteur*/
 const fullStar = `<i class="bi bi-star-fill"></i>`;
 const halfStar = `<i class="bi bi-star-half"></i>`;
@@ -38,6 +23,13 @@ function generateStars(note) {
 // const note = {{ user.averageRating ?? 0 }};
 // Sélectionne toutes les zones de rating
 document.querySelectorAll(".rating-desktop").forEach((ratingElement) => {
+  // récupère la note du data-note
+  const note = ratingElement.dataset.note;
+
+  // injecte les étoiles
+  ratingElement.innerHTML = generateStars(note);
+});
+document.querySelectorAll(".rating-notice-desktop").forEach((ratingElement) => {
   // récupère la note du data-note
   const note = ratingElement.dataset.note;
 

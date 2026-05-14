@@ -97,7 +97,7 @@
     <div
       class="filter-desktop d-none d-lg-flex align-items-center gap-2 p-2 w-70"
     >
-      <form id="filterForm">
+      <form id="filterForm" class="size-filter-desktop">
         <!-- Switch -->
         <div class="form-check form-switch m-0">
           <input
@@ -117,14 +117,9 @@
             type="number"
             class="form-control"
             min="0"
-            placeholder="Prix Min"
-          />
-
-          <input
-            type="number"
-            class="form-control"
-            min="0"
-            placeholder="Prix Max"
+            id="priceMaxInput"
+            name="priceMaxInput"
+            placeholder="Prix Maximum"
           />
           <!-- Temps -->
           <input
@@ -133,7 +128,7 @@
             name="traveltimeInput"
             min="0"
             class="form-control"
-            placeholder="Temps de trajet"
+            placeholder="Temps de trajet (en minutes)"
           />
 
           <!-- Note -->
@@ -143,8 +138,8 @@
             name="noteInput"
             min="0"
             max="5"
-            class="form-control"
-            placeholder="★ Note du conducteur"
+            class="form-control size-note-desktop"
+            placeholder="★ Note du conducteur (0-5)"
           />
         </div>
       </form>
@@ -154,9 +149,9 @@
   <div class="container-fluid result-research pt-4">
     <div class="row row-cols-lg-4 g-4 d-flex justify-content-center">
       <div class="col modify-col">
-        <div class="covoiturage-card bg-white">
+        <div class="covoiturage-card covoiturage-co bg-white">
           <!-- Ligne trajet -->
-          <div class="box-exemple-time">
+          <div class="box-exemple">
             <div>
               <span class="departure-time">20:00</span>
             </div>
@@ -194,20 +189,12 @@
                 class="rounded-circle"
                 alt=""
             /></span>
-            <span class="name-User ms-3">Mélilylyloula</span>
-            <span class="image-Star ms-4"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                fill="currentColor"
-                class="bi bi-star-half"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"
-                /></svg
-            ></span>
+            <span class="name-User ms-3">David</span>
+            <div class="rating-mobile">
+              <span class="note-star ms-4">4.5</span>
+              <i class="bi bi-star-fill ms-1"></i>
+            </div>
+            <div class="rating-desktop" data-note="4.5"></div>
             <button class="btn btn-secondary ms-auto">Détail</button>
           </div>
           <div class="d-flex align-items-center gap-2 pt-2">
@@ -227,9 +214,9 @@
         </div>
       </div>
       <div class="col modify-col">
-        <div class="covoiturage-card bg-white">
+        <div class="covoiturage-card covoiturage-co bg-white">
           <!-- Ligne trajet -->
-          <div class="box-exemple-time">
+          <div class="box-exemple">
             <div>
               <span class="departure-time">20:00</span>
             </div>
@@ -268,19 +255,11 @@
                 alt=""
             /></span>
             <span class="name-User">Mélilylyloula</span>
-            <span class="image-Star ms-2"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                fill="currentColor"
-                class="bi bi-star-half"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"
-                /></svg
-            ></span>
+            <div class="rating-mobile">
+              <span class="note-star ms-4">3.5</span>
+              <i class="bi bi-star-fill ms-1"></i>
+            </div>
+            <div class="rating-desktop" data-note="3.5"></div>
             <button class="btn btn-secondary ms-auto">Détail</button>
           </div>
           <div class="d-flex align-items-center gap-2">
@@ -343,16 +322,10 @@
             <input
               type="number"
               class="form-control"
-              min="0"
-              placeholder="Prix Min"
-            />
-
-            <input
-              type="number"
-              class="form-control"
-              min="0"
+              min="1"
               placeholder="Prix Max"
             />
+
             <!-- Temps -->
             <input
               type="number"
@@ -360,7 +333,7 @@
               name="traveltimemobileInput"
               min="0"
               class="form-control"
-              placeholder="Temps de trajet"
+              placeholder="Temps de trajet (en minutes)"
             />
 
             <!-- Note -->
@@ -371,7 +344,7 @@
               min="0"
               max="5"
               class="form-control"
-              placeholder="★ Note du conducteur"
+              placeholder="★ Note du conducteur (0-5)"
             />
           </div>
         </form>

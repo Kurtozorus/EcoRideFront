@@ -11,6 +11,13 @@ export const allRoutes = [
     [],
     "/js/covoiturage.js",
   ),
+  new Route(
+    "/details",
+    "Détails du covoiturage",
+    "/pages/details.html",
+    [],
+    "/js/details.js",
+  ),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename

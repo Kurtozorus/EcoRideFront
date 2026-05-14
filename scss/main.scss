@@ -27,6 +27,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-sans-serif;
     font-size: 20px;
 }
+
 /* Styles Home page */
 
 .paddingright {
@@ -128,7 +129,6 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     height: 214px;
-    
 }
 .big-title-covoiturage {
     margin-top: 75px;
@@ -148,9 +148,42 @@ h1, h2, h3, h4, h5, h6 {
      min-height: 50vh;
      background-color: #A8D5BA;
 }
+.rating-mobile {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  i {
+    color: #FFD700;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  span {
+    color: #212529;
+  }
+}
+.rating-desktop {
+  display: none;
+}
+.form-check-input {
+        transform: scale(0.8); /* réduit le switch */
+    }
+    
+    .form-check-input:checked {
+        background-color: #06f74e;
+        border-color: #2e0b70;
+    }
+    .form-check-input{
+        --bs-form-check-bg: #f50303;
+    }
 /* Styles exemple covoiturage */
 .covoiturage-info-content {
     bottom: 500px;
+}
+.covoiturage-co{
+    font-family: $font-family-serif;
+    font-size: 16px;
 }
 
 .arrival-time {
@@ -159,14 +192,14 @@ h1, h2, h3, h4, h5, h6 {
 .departure-time {
     padding-right: 40px;
 }
-.box-exemple-time {
+.box-exemple {
     display: flex;
     justify-content: center;
     color: #000;
 }
 .trait {
     padding: 0 0 20px 50px;
-    top: 9px;
+    top: 12px;
     border-top: 2px solid #000;
     position: relative;
 }
@@ -181,7 +214,90 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-@media (min-width: 992px) {
+/* Styles Détails page */
+.details-scene {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/accessoires-feminins-sac-plage_23-2147836793.webp);
+        background-size: cover;
+        background-position: center;
+        filter:brightness(0.8);
+    }
+    * {
+        position: relative;
+    }
+}
+.big-title-details {
+    margin-top: 75px;
+}
+.details-scene-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 214px;
+}
+.details-main-content {
+     top: 100px;
+     min-height: 50vh;
+     background-color: #A8D5BA;
+}
+.details-co {
+    position: relative;
+    top: -20px;
+    font-family: $font-family-serif;
+    font-size: 16px;
+}
+.user-info {
+    font-family: $font-family-serif; 
+}
+.background-User{
+    background-color: #817f7f;
+}
+.border-end {
+    bordercolor: #000 !important;
+}
+.border-bottom {
+    border-color: #000 !important;
+}
+.conducteur-card {
+    padding-left: revert;
+    padding-right: revert;
+    border-radius: 12px;
+    overflow: hidden; // IMPORTANT pour que le bg dépasse pas
+    width: 96%;
+}
+.background-conducteur {
+    background-color: #D9D9D9 !important;
+}
+.mobile-wrap {
+    flex-wrap: wrap;
+}
+.rating-notice-mobile {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  i {
+    color: #000000;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  span {
+    color: #212529;
+  }
+}
+.rating-notice-desktop {
+    display: none;
+}
+@include media-breakpoint-up(xxl){
     /* Style global */
     p{
         font-size: 18px;
@@ -252,6 +368,32 @@ h1, h2, h3, h4, h5, h6 {
     .filter-desktop {
         background-color: #fff;
     }
+    .note-star {
+        padding-left: 2rem;
+    }
+    .rating-mobile {
+        display: none;
+    }
+    .rating-desktop {
+        display: flex;
+        align-items: center;
+        gap: 2px;         
+        i{
+            font-size: 30px;
+            color: #FFD700;
+            line-height: 1;
+        }
+    }
+    .rating-notice-desktop {
+        display: flex;
+        align-items: center;
+        gap: 2px;         
+        i{
+            font-size: 20px;
+            color: #000000;
+            line-height: 1;
+        }
+    }
     /**teste**/
     .form-control-xs {
     height: 28px;
@@ -262,15 +404,57 @@ h1, h2, h3, h4, h5, h6 {
     .form-check-input {
         transform: scale(0.8); /* réduit le switch */
     }
-    .modify-col {
-        width: 20%;
-    }
+    
     .form-check-input:checked {
         background-color: #06f74e;
         border-color: #2e0b70;
     }
     .form-check-input{
         --bs-form-check-bg: #f50303;
+    }
+    .size-note-desktop {
+        width: 50rem;
+    }
+    /* Styles Détails page */
+    .details-scene-content {
+        height:555px;
+    }
+    .big-title-details {
+        margin-top: 250px;
+        position: relative;
+        top: 0px;
+    }
+    .details-co {
+        width: 50%;
+        top: 0px;
+        position: unset;
+    }
+    .margin-details-info-s{
+        margin-left: 80px !important;
+    }
+    
+    .margin-details-info{
+        margin-left: 150px !important;
+    }
+    .margin-details-info-price{
+        margin-left: 160px !important;
+    }
+    .margin-details-info-seat{
+        margin-left: 110px !important;
+    }
+    .conducteur-card {
+        width: 100%;
+        max-width: 920px; // ou ce que tu veux
+        border-radius: 12px;
+        overflow: hidden; // IMPORTANT pour que le bg dépasse pas
+        padding-left: revert;
+        padding-right: revert;
+    }
+    .mobile-wrap {
+        flex-wrap: nowrap;
+    }
+    .rating-notice-mobile {
+        display: none;
     }
 }
 

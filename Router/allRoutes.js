@@ -25,6 +25,13 @@ export const allRoutes = [
     [],
     "/js/auth/signin.js",
   ),
+  new Route(
+    "/inscription",
+    "Inscription",
+    "/pages/auth/signup.html",
+    [],
+    "/js/auth/signup.js",
+  ),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename

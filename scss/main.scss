@@ -335,6 +335,40 @@ h1, h2, h3, h4, h5, h6 {
 .big-title-signin {
     margin-top: 75px;
 }
+/* Styles Signup Page */
+.signup-scene {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/pexels-enregistrement.jpg);
+        background-size: cover;
+        background-position: center;
+        filter:brightness(0.8);
+    }
+    * {
+        position: relative;
+    }
+}
+.signup-scene-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 214px;
+}
+.signup-main-content {
+        top: 100px;
+        min-height: 30vh;
+        background-color: #A8D5BA;
+}
+.big-title-signup {
+    margin-top: 75px;
+}
 @include media-breakpoint-up(xxl){
     /* Style global */
     p{
@@ -499,6 +533,15 @@ h1, h2, h3, h4, h5, h6 {
         height:555px;
     }
     .big-title-signin {
+        margin-top: 250px;
+        position: relative;
+        top: 0px;
+    }
+    /* Styles Signup Page */
+    .signup-scene-content {
+        height:555px;
+    }
+    .big-title-signup {
         margin-top: 250px;
         position: relative;
         top: 0px;

@@ -35,7 +35,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .big-title {
         margin-top: 300px;
-    }
+}
+.background-big-title {
+    background-color: #1c221e;
+    opacity: 0.7;
+}
 .btn-research {
     width: 100%;
 }
@@ -154,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 4px;
 
   i {
-    color: #FFD700;
+    color: #1F7A63;
     font-size: 18px;
     line-height: 1;
   }
@@ -285,7 +289,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 4px;
 
   i {
-    color: #000000;
+    color: #1F7A63;
     font-size: 18px;
     line-height: 1;
   }
@@ -296,6 +300,74 @@ h1, h2, h3, h4, h5, h6 {
 }
 .rating-notice-desktop {
     display: none;
+}
+/* Styles Signin Page */
+.signin-scene {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/pexels-helenalopes-708392.jpg);
+        background-size: cover;
+        background-position: center;
+        filter:brightness(0.8);
+    }
+    * {
+        position: relative;
+    }
+}
+.signin-scene-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 214px;
+}
+.signin-main-content {
+        top: 100px;
+        min-height: 30vh;
+        background-color: #A8D5BA;
+}
+.big-title-signin {
+    margin-top: 75px;
+}
+/* Styles Signup Page */
+.signup-scene {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/pexels-enregistrement.jpg);
+        background-size: cover;
+        background-position: center;
+        filter:brightness(0.8);
+    }
+    * {
+        position: relative;
+    }
+}
+.signup-scene-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 214px;
+}
+.signup-main-content {
+        top: 100px;
+        min-height: 30vh;
+        background-color: #A8D5BA;
+}
+.big-title-signup {
+    margin-top: 75px;
 }
 @include media-breakpoint-up(xxl){
     /* Style global */
@@ -380,7 +452,7 @@ h1, h2, h3, h4, h5, h6 {
         gap: 2px;         
         i{
             font-size: 30px;
-            color: #FFD700;
+            color: #1F7A63;
             line-height: 1;
         }
     }
@@ -390,7 +462,7 @@ h1, h2, h3, h4, h5, h6 {
         gap: 2px;         
         i{
             font-size: 20px;
-            color: #000000;
+            color: #1F7A63;
             line-height: 1;
         }
     }
@@ -455,6 +527,24 @@ h1, h2, h3, h4, h5, h6 {
     }
     .rating-notice-mobile {
         display: none;
+    }
+    /* Styles Signin Page */
+    .signin-scene-content {
+        height:555px;
+    }
+    .big-title-signin {
+        margin-top: 250px;
+        position: relative;
+        top: 0px;
+    }
+    /* Styles Signup Page */
+    .signup-scene-content {
+        height:555px;
+    }
+    .big-title-signup {
+        margin-top: 250px;
+        position: relative;
+        top: 0px;
     }
 }
 

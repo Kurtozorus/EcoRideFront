@@ -32,6 +32,13 @@ export const allRoutes = [
     [],
     "/js/auth/signup.js",
   ),
+  new Route(
+    "/compte",
+    "Mon compte",
+    "/pages/auth/account.html",
+    [],
+    "/js/auth/account.js",
+  ),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename

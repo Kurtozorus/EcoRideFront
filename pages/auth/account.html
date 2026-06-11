@@ -1,0 +1,937 @@
+<div class="account-scene container-fluid">
+  <div class="account-scene-content">
+    <div class="big-title-account text-center">
+      <h2 class="text-primary background-big-title">
+        Partagez votre trajet, économisez et roulez plus vert
+      </h2>
+      <p class="text-primary background-big-title">
+        Trouver le covoiturage qui vous convient !
+      </p>
+    </div>
+  </div>
+</div>
+<div class="account-main-content">
+  <div class="text-center">
+    <h2>Informations personnelles</h2>
+  </div>
+  <hr />
+  <div
+    class="container parent d-flex flex-column flex-lg-row justify-content-around"
+  >
+    <!-- Colonne info 1 -->
+    <div class="container user1 w-100 w-lg-50">
+      <div class="row d-flex">
+        <div class="col-md-12 col-sm-3 mt-4">
+          <form id="accountForm" class="ps-4 pe-4 rounded">
+            <div class="form-group mb-3">
+              <label for="pseudoInput" class="form-label">Pseudo</label>
+              <input
+                type="text"
+                class="form-control"
+                id="pseudoInput"
+                placeholder="Entrer un nouveau pseudo"
+                name="pseudo"
+              />
+              <div class="invalid-feedback">
+                Votre pseudo est requis et doit compter au moins 3 caractères.
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="lastNameInput" class="form-label">Nom</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastNameInput"
+                placeholder="Entrer votre nom"
+                name="name"
+              />
+              <div class="invalid-feedback">Votre nom est requis.</div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="firstNameInput" class="form-label">Prénom</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstNameInput"
+                placeholder="Entrer votre prénom"
+                name="firstName"
+              />
+              <div class="invalid-feedback">Votre prénom est requis.</div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="phoneNumberInput" class="form-label"
+                >Numéro de téléphone</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="phoneNumberInput"
+                placeholder="Entrer votre numéro de téléphone"
+                name="phoneNumber"
+              />
+              <div class="invalid-feedback">
+                Votre numéro de téléphone est requis.
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="addressInput" class="form-label">Adresse</label>
+              <input
+                type="text"
+                class="form-control"
+                id="addressInput"
+                placeholder="Entrer votre adresse"
+                name="address"
+              />
+              <div class="invalid-feedback">Votre adresse est requise.</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container user2 w-100 w-lg-50">
+      <div class="row d-flex">
+        <div class="col-md-12 col-sm-3 mt-4">
+          <form id="accountForm" class="rounded ps-4 pe-4">
+            <div class="form-group mt-1 mb-3">
+              <label for="birthdayInput" class="form-label"
+                >Date de naissance</label
+              >
+              <input
+                type="date"
+                class="form-control"
+                id="birthdayInput"
+                placeholder="Entrer votre date de naissance"
+                name="birthday"
+              />
+              <div class="invalid-feedback">
+                Votre date de naissance est requise.
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="emailInput" class="form-label">Email</label>
+              <input
+                disabled
+                type="email"
+                class="form-control"
+                id="emailInput"
+                name="email"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <div class="d-flex align-items-center mb-3">
+                <label for="imageInput" class="form-label"
+                  >Image de profile :</label
+                >
+                <div class="mt-5 ps-5">
+                  <img
+                    id="imageProduitPreview"
+                    src="/images/default-profile.webp"
+                    alt="Aperçu de l'image"
+                    style="
+                      max-width: 60px;
+                      max-height: 60px;
+                      border-radius: 50%;
+                    "
+                  />
+                </div>
+              </div>
+              <input
+                type="file"
+                class="form-control"
+                id="imageInput"
+                name="image"
+              />
+            </div>
+            <div class="d-flex mt-5 gap-5">
+              <p>
+                Vos crédits : <span id="credits"><i>- </i></span> points
+              </p>
+              <button id="btn-credits" class="btn btn-primary border pt-2">
+                Ajouter des crédits
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center pt-3 ms-2 me-2 gap-3">
+    <button
+      id="btn-status"
+      type="button"
+      class="btn btn-secondary border mt-4"
+      data-bs-toggle="modal"
+      data-bs-target="#statusModal"
+    >
+      Status
+    </button>
+    <button
+      id="btn-route-in-progress"
+      type="button"
+      class="btn btn-secondary border mt-4"
+      data-bs-toggle="modal"
+      data-bs-target="#routeInProgressModal"
+    >
+      Trajets en cours
+    </button>
+    <button
+      id="btn-history"
+      type="button"
+      class="btn btn-secondary border mt-4"
+      data-bs-toggle="modal"
+      data-bs-target="#historyModal"
+    >
+      Historique
+    </button>
+  </div>
+  <div class="info-conducteur">
+    <hr />
+    <div class="text-center">
+      <h2>Mon véhicule et mes préférences</h2>
+    </div>
+    <hr />
+    <div class="d-flex justify-content-center ms-2 me-2 gap-3">
+      <div class="text-center mt-4">
+        <button
+          id="btn-vehicule"
+          type="button"
+          class="btn btn-secondary border"
+          data-bs-toggle="modal"
+          data-bs-target="#vehicleModal"
+        >
+          Ajouter une véhicule
+        </button>
+      </div>
+      <div class="text-center mt-4">
+        <button
+          id="btn-car-choice"
+          type="button"
+          class="btn btn-secondary border"
+          data-bs-toggle="modal"
+          data-bs-target="#carChoiceModal"
+        >
+          Choisir mon véhicule
+        </button>
+      </div>
+      <div class="text-center mt-4">
+        <button
+          id="btn-preferences"
+          type="button"
+          class="btn btn-secondary border"
+          data-bs-toggle="modal"
+          data-bs-target="#preferencesModal"
+        >
+          Modifier mes préférences
+        </button>
+      </div>
+      <div class="text-center mt-4">
+        <button
+          id="btn-route-choice"
+          type="button"
+          class="btn btn-secondary border"
+          data-bs-toggle="modal"
+          data-bs-target="#routeModal"
+        >
+          Créer un trajet
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="container parent2 d-flex flex-column flex-lg-row justify-content-around"
+    >
+      <!-- Colonne véhicule -->
+      <div class="container user1 w-100 w-lg-50 d-flex justify-content-center">
+        <div class="row d-flex">
+          <div class="col-md-12 col-sm-3 mt-4">
+            <form id="accountForm" class="ps-4 pe-4 rounded">
+              <h6 class="fw-bold">Le véhicule :</h6>
+              <div class="background-conducteur rounded-2 p-3 text-center">
+                <div class="d-flex justify-content-between text-center">
+                  <div class="form-group mb-3">
+                    <label for="registrationInput" class="form-label"
+                      >Plaque d'immatriculation</label
+                    >
+                    <input
+                      disabled
+                      type="text"
+                      class="form-control"
+                      id="registrationInput"
+                      name="registration"
+                    />
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between text-center">
+                  <div class="form-group mb-3">
+                    <label for="firstRegistrationInput" class="form-label"
+                      >Première mise en circulation</label
+                    >
+                    <input
+                      disabled
+                      type="text"
+                      class="form-control"
+                      id="firstRegistrationInput"
+                      name="firstRegistration"
+                    />
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between text-center">
+                  <div class="form-group mb-3">
+                    <label for="brandInput" class="form-label"
+                      >Marque du véhicule</label
+                    >
+                    <input
+                      disabled
+                      type="text"
+                      class="form-control"
+                      id="brandInput"
+                      name="brand"
+                    />
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between text-center">
+                  <div class="form-group mb-3">
+                    <label for="energyInput" class="form-label">Energie</label>
+                    <input
+                      disabled
+                      type="text"
+                      class="form-control"
+                      id="energyInput"
+                      name="energy"
+                    />
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between text-center">
+                  <div class="form-group mb-3">
+                    <label for="nbSeatsInput" class="form-label"
+                      >Nombre de places</label
+                    >
+                    <input
+                      disabled
+                      type="text"
+                      class="form-control"
+                      id="nbSeatsInput"
+                      name="seats"
+                    />
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between text-center">
+                  <div class="form-group mb-3">
+                    <label for="carColorInput" class="form-label"
+                      >Couleur du véhicule</label
+                    >
+                    <input
+                      disabled
+                      type="text"
+                      class="form-control"
+                      id="carColorInput"
+                      name="carColor"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Colonne préférences -->
+      <div class="container user2 w-100 w-lg-50">
+        <div class="row d-flex">
+          <div class="col-md-12 col-sm-3 mt-4">
+            <form id="accountForm" class="pe-3 ps-3 rounded">
+              <h6 class="fw-bold">Les préférences :</h6>
+              <div class="background-conducteur rounded-2 p-3">
+                <div class="d-flex justify-content-between">
+                  <p>Fumeur :</p>
+                  <span class="smoke">-</span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <p>Musique :</p>
+                  <span class="music">-</span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <p>Papotage :</p>
+                  <span class="discussion">-</span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <p>Animaux :</p>
+                  <span class="pets">-</span>
+                </div>
+                <div
+                  class="background-conducteur rounded-2 p-3 mt-3 text-center"
+                >
+                  <u>Vos préférences personnelles</u> : <br /><span
+                    class="personal-preferences"
+                    >-
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal choix du status -->
+<div
+  class="modal fade"
+  id="statusModal"
+  tabindex="-1"
+  aria-labelledby="statusModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="statusModalLabel">Status</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group bg-primary p-3 mb-3">
+          <label for="vehicleSelect" class="form-label">Choix du status</label>
+          <select class="form-select" id="statusSelect" name="status" required>
+            <option selected disabled value="">Choisir un status</option>
+            <option value="driver">Conducteur</option>
+            <option value="passenger">Passager</option>
+            <option value="both">Les deux</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-light border"
+          data-bs-dismiss="modal"
+        >
+          Fermer
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary border"
+          id="btn-save-status"
+        >
+          Enregistrer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal ajout de véhicule -->
+<div
+  class="modal fade"
+  id="vehicleModal"
+  tabindex="-1"
+  aria-labelledby="vehicleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="vehicleModalLabel">
+          Ajout de véhicule
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="carForm" class="bg-primary p-3">
+          <div class="form-group">
+            <label for="registrationInput">Plaque d'immatriculation</label>
+            <input type="text" class="form-control" id="registrationInput" />
+          </div>
+          <div class="form-group">
+            <label for="firstRegistrationInput"
+              >Première date de mise en circulation</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="firstRegistrationInput"
+            />
+          </div>
+          <div class="form-group">
+            <label for="brandInput">Marque du véhicule</label>
+            <input type="text" class="form-control" id="brandInput" />
+          </div>
+          <div class="form-group">
+            <label for="energyInput">Energie</label>
+            <input type="text" class="form-control" id="energyInput" />
+          </div>
+          <div class="form-group">
+            <label for="nbSeatsInput">Nombre de places</label>
+            <input type="text" class="form-control" id="nbSeatsInput" />
+          </div>
+          <div class="form-group">
+            <label for="carColorInput">Couleur du véhicule</label>
+            <input type="text" class="form-control" id="carColorInput" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-light border"
+          data-bs-dismiss="modal"
+        >
+          Fermer
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary border"
+          id="btn-save-car"
+        >
+          Enregistrer le véhicule
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal choix de voiture -->
+<div
+  class="modal fade"
+  id="carChoiceModal"
+  tabindex="-1"
+  aria-labelledby="carChoiceModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="carChoiceModalLabel">
+          Choix du véhicule
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group bg-primary p-3 mb-3">
+          <label for="vehicleSelect" class="form-label"
+            >Choix du véhicule</label
+          >
+          <select
+            class="form-select"
+            id="vehicleSelect"
+            name="vehicle"
+            required
+          >
+            <option selected disabled value="">Choisir un véhicule</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-light border"
+          data-bs-dismiss="modal"
+        >
+          Fermer
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary border"
+          id="btn-choose-car"
+        >
+          Choisir le véhicule
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal préférences -->
+<div
+  class="modal fade"
+  id="preferencesModal"
+  tabindex="-1"
+  aria-labelledby="preferencesModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="preferencesModalLabel">Préférences</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="preferencesForm" class="bg-primary p-3">
+          <div class="form-group bg-primary p-3">
+            <div class="d-flex justify-content-between">
+              <p>Fumeur :</p>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="switchCheckSmoke"
+                />
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <p>Musique :</p>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  -
+                  type="checkbox"
+                  role="switch"
+                  id="switchCheckMusic"
+                />
+              </div>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p>Papotage :</p>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="switchCheckDiscussion"
+                />
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <p>Animaux :</p>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="switchCheckPets"
+                />
+              </div>
+            </div>
+            <textarea
+              name="personalPreference"
+              id="personalPreference"
+              class="form-control"
+              placeholder="Décrivez vos préférences personnelles..."
+            ></textarea>
+          </div>
+        </form>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-light border"
+            data-bs-dismiss="modal"
+          >
+            Fermer
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary border"
+            id="btn-save-preferences"
+          >
+            Enregistrer les préférences
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal ajout de trajet -->
+<div
+  class="modal fade"
+  id="routeModal"
+  tabindex="-1"
+  aria-labelledby="routeModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="routeModalLabel">Ajouter un trajet</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="routeForm" class="bg-primary p-3">
+          <div class="form-group bg-primary p-3">
+            <div class="form-group">
+              <label for="departureCityInput">Ville de départ</label>
+              <input type="text" class="form-control" id="departureCityInput" />
+            </div>
+
+            <div class="form-group">
+              <label for="arrivalCityInput">Ville d'arrivée</label>
+              <input type="text" class="form-control" id="arrivalCityInput" />
+            </div>
+            <div class="form-group">
+              <label for="departureTimeInput">Heure de départ</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="departureTimeInput"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="arrivalTimeInput">Heure d'arrivée</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="arrivalTimeInput"
+              />
+            </div>
+            <div class="form-group">
+              <label for="availableSeatsInput"
+                >Nombre de places disponibles</label
+              >
+              <input
+                type="number"
+                min="1"
+                class="form-control"
+                id="availableSeatsInput"
+              />
+            </div>
+            <div class="form-group bg-primary">
+              <label for="vehicleSelect" class="form-label"
+                >Choix du véhicule</label
+              >
+              <select
+                class="form-select"
+                id="vehicleSelect"
+                name="vehicle"
+                required
+              >
+                <option selected disabled value="">Choisir un véhicule</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="priceInput">Prix du trajet</label>
+              <input type="text" class="form-control" id="priceInput" />
+            </div>
+          </div>
+        </form>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-light border"
+            data-bs-dismiss="modal"
+          >
+            Fermer
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary border"
+            id="btn-save-preferences"
+          >
+            Enregistrer le trajet
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal trajet en cours -->
+<div
+  class="modal fade"
+  id="routeInProgressModal"
+  tabindex="-1"
+  aria-labelledby="routeInProgressModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="routeInProgressModalLabel">
+          Trajet en cours
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="routeForm" class="bg-primary p-3">
+          <div class="form-group bg-primary p-3">
+            <div class="form-group">
+              <p class="fw-bold">
+                Route de départ : <span id="departureCity"></span>
+              </p>
+            </div>
+
+            <div class="form-group">
+              <p class="fw-bold">
+                Ville d'arrivée : <span id="arrivalCity"></span>
+              </p>
+            </div>
+            <div class="form-group">
+              <p class="fw-bold">
+                Heure de départ : <span id="departureTime"></span>
+              </p>
+            </div>
+
+            <div class="form-group">
+              <p class="fw-bold">
+                Heure d'arrivée : <span id="arrivalTime"></span>
+              </p>
+            </div>
+            <div class="form-group">
+              <p class="fw-bold">
+                Nombre de places disponibles :
+                <span id="availableSeats"></span>
+              </p>
+            </div>
+            <div class="form-group bg-primary">
+              <p class="fw-bold">
+                Véhicule utilisé : <span id="vehicleUsed"></span>
+              </p>
+            </div>
+            <div class="form-group">
+              <p class="fw-bold">Prix du trajet : <span id="price"></span></p>
+            </div>
+          </div>
+        </form>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-light border"
+            data-bs-dismiss="modal"
+          >
+            Fermer
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger border"
+            data-bs-toggle="modal"
+            data-bs-target="#cancelConfirmModal"
+          >
+            Annuler
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary border"
+            data-bs-toggle="modal"
+            data-bs-target="#participantsModal"
+          >
+            Liste
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary border"
+            id="btn-save-preferences"
+          >
+            Terminer le trajet
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal annulation du trajet-->
+<div
+  class="modal fade"
+  id="cancelConfirmModal"
+  tabindex="-1"
+  aria-labelledby="cancelConfirmModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="cancelConfirmModalLabel">
+          Confirmer l'annulation
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">Êtes-vous sûr de vouloir annuler ce trajet ?</div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary border"
+          data-bs-dismiss="modal"
+        >
+          Fermer
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger border"
+          id="btn-confirm-cancel"
+        >
+          Confirmer l'annulation
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal liste des participants-->
+<div
+  class="modal fade"
+  id="participantsModal"
+  tabindex="-1"
+  aria-labelledby="participantsModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="participantsModalLabel">
+          Liste des participants
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Voici la liste des participants pour ce trajet.</p>
+        <div id="participantsList" class="mt-3">
+          <!-- La liste des participants sera générée ici -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary border"
+          data-bs-dismiss="modal"
+        >
+          Fermer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12007,11 +12007,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-size: 20px;
 }
 
-label {
-  font-family: "Manrope", serif;
-  font-size: 14px;
-}
-
 /* Styles Home page */
 .paddingright {
   padding-right: 20px;
@@ -12425,10 +12420,6 @@ label {
   margin-top: 75px;
 }
 
-.info-conducteur {
-  display: none;
-}
-
 @media (min-width: 1400px) {
   /* Style global */
   p {
@@ -12436,9 +12427,6 @@ label {
   }
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     font-size: 26px;
-  }
-  label {
-    font-size: 16px;
   }
   .logo {
     width: 32px;
@@ -12586,9 +12574,6 @@ label {
   }
   .rating-notice-mobile {
     display: none;
-  }
-  .background-conducteur p {
-    font-size: 16px;
   }
   /* Styles Signin Page */
   .signin-scene-content {

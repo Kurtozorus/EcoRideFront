@@ -12472,6 +12472,44 @@ label {
   width: 10rem;
 }
 
+/* Styles credit Page */
+.credit-scene {
+  position: relative;
+}
+.credit-scene::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/credit.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.8);
+}
+.credit-scene * {
+  position: relative;
+}
+
+.credit-scene-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 214px;
+}
+
+.credit-main-content {
+  top: 100px;
+  min-height: 30vh;
+  background-color: #A8D5BA;
+}
+
+.big-title-credit {
+  margin-top: 75px;
+}
+
 @media (min-width: 1400px) {
   /* Style global */
   p {
@@ -12672,5 +12710,14 @@ label {
   /* Styles history Page */
   .size-card {
     width: 12rem;
+  }
+  /* Styles credit Page */
+  .credit-scene-content {
+    height: 555px;
+  }
+  .big-title-credit {
+    margin-top: 250px;
+    position: relative;
+    top: 0px;
   }
 }/*# sourceMappingURL=main.css.map */

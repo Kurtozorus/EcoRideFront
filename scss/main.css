@@ -12467,6 +12467,11 @@ label {
   margin-top: 75px;
 }
 
+/* Styles history Page */
+.size-card {
+  width: 10rem;
+}
+
 @media (min-width: 1400px) {
   /* Style global */
   p {
@@ -12663,5 +12668,9 @@ label {
     margin-top: 250px;
     position: relative;
     top: 0px;
+  }
+  /* Styles history Page */
+  .size-card {
+    width: 12rem;
   }
 }/*# sourceMappingURL=main.css.map */

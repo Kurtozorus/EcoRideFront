@@ -444,6 +444,10 @@ label {
 .big-title-history {
     margin-top: 75px;
 }
+/* Styles history Page */
+    .size-card {
+        width: 10rem;
+    }
 @include media-breakpoint-up(xxl){
     /* Style global */
     p{
@@ -645,6 +649,10 @@ label {
         margin-top: 250px;
         position: relative;
         top: 0px;
+    }
+    /* Styles history Page */
+    .size-card {
+        width: 12rem;
     }
 }
 

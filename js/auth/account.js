@@ -13,9 +13,11 @@ const petsSpan = document.querySelector(".pets");
 const preferencePersonal = document.getElementById("personalPreference");
 const spanPersonal = document.querySelector(".personal-preferences");
 const btnSavePreferences = document.getElementById("btn-save-preferences");
+const btnHistory = document.getElementById("btn-history");
 
 btnSaveStatus.addEventListener("click", saveStatus);
 btnSavePreferences.addEventListener("click", savePrefrences);
+btnHistory.addEventListener("click", showHistory);
 
 smokeCheckbox.addEventListener("change", savePrefrences);
 musicCheckbox.addEventListener("change", savePrefrences);

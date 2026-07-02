@@ -31,7 +31,13 @@
             <h5 class="card-title">Pack 1</h5>
             <p class="card-text">10 crédits</p>
             <p>5 €</p>
-            <button class="btn btn-primary">Acheter</button>
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#pack1Modal"
+            >
+              Acheter
+            </button>
           </div>
         </div>
       </div>
@@ -47,7 +53,13 @@
             <h5 class="card-title">Pack 2</h5>
             <p class="card-text">25 crédits</p>
             <p>10 €</p>
-            <button class="btn btn-primary">Acheter</button>
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#pack2Modal"
+            >
+              Acheter
+            </button>
           </div>
         </div>
       </div>
@@ -63,7 +75,13 @@
             <h5 class="card-title">Pack 3</h5>
             <p class="card-text">50 crédits</p>
             <p>25 €</p>
-            <button class="btn btn-primary">Acheter</button>
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#pack3Modal"
+            >
+              Acheter
+            </button>
           </div>
         </div>
       </div>
@@ -79,7 +97,13 @@
             <h5 class="card-title">Pack 4</h5>
             <p class="card-text">100 crédits</p>
             <p>50 €</p>
-            <button class="btn btn-primary">Acheter</button>
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#pack4Modal"
+            >
+              Acheter
+            </button>
           </div>
         </div>
       </div>
@@ -95,7 +119,13 @@
             <h5 class="card-title">Pack 5</h5>
             <p class="card-text">250 crédits</p>
             <p>125 €</p>
-            <button class="btn btn-primary">Acheter</button>
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#pack5Modal"
+            >
+              Acheter
+            </button>
           </div>
         </div>
       </div>
@@ -111,9 +141,225 @@
             <h5 class="card-title">Pack 6</h5>
             <p class="card-text">500 crédits</p>
             <p>250 €</p>
-            <button class="btn btn-primary">Acheter</button>
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#pack6Modal"
+            >
+              Acheter
+            </button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Validation 10 crédits -->
+
+<div
+  class="modal fade"
+  id="pack1Modal"
+  tabindex="-1"
+  aria-labelledby="pack1ModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="pack1ModalLabel">Pack crédits</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Voulez-vous vraiment acheter ce pack de 10 crédits ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+        <button type="button" id="pack1" class="btn btn-secondary">
+          Acheter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Validation 25 crédits -->
+
+<div
+  class="modal fade"
+  id="pack2Modal"
+  tabindex="-1"
+  aria-labelledby="pack2ModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="pack2ModalLabel">Pack crédits</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Voulez-vous vraiment acheter ce pack de 25 crédits ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+        <button type="button" id="pack2" class="btn btn-secondary">
+          Acheter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Validation 50 crédits -->
+
+<div
+  class="modal fade"
+  id="pack3Modal"
+  tabindex="-1"
+  aria-labelledby="pack3ModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="pack3ModalLabel">Pack crédits</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Voulez-vous vraiment acheter ce pack de 50 crédits ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+        <button type="button" id="pack3" class="btn btn-secondary">
+          Acheter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Validation 100 crédits -->
+
+<div
+  class="modal fade"
+  id="pack4Modal"
+  tabindex="-1"
+  aria-labelledby="pack4ModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="pack4ModalLabel">Pack crédits</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Voulez-vous vraiment acheter ce pack de 100 crédits ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+        <button type="button" id="pack4" class="btn btn-secondary">
+          Acheter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Validation 250 crédits -->
+
+<div
+  class="modal fade"
+  id="pack5Modal"
+  tabindex="-1"
+  aria-labelledby="pack5ModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="pack5ModalLabel">Pack crédits</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Voulez-vous vraiment acheter ce pack de 250 crédits ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+        <button type="button" id="pack5" class="btn btn-secondary">
+          Acheter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Validation 500 crédits -->
+
+<div
+  class="modal fade"
+  id="pack6Modal"
+  tabindex="-1"
+  aria-labelledby="pack6ModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="pack6ModalLabel">Pack crédits</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Voulez-vous vraiment acheter ce pack de 500 crédits ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+        <button type="button" id="pack6" class="btn btn-secondary">
+          Acheter
+        </button>
       </div>
     </div>
   </div>

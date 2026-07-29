@@ -481,13 +481,290 @@
         <p>Passagers : <span id="passengers-history">4</span></p>
         <p>
           Pseudo des passagers :
-          <span id="nicknames-passengers-history"
-            >sophie - christine - renaud - nicolas</span
+          <a
+            href="#"
+            class="btn btn-secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#passengerModal"
+            ><span id="nicknames-passengers-one-history">sophie </span></a
+          >
+          -
+          <a
+            href="#"
+            class="btn btn-secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#passengerModal"
+            ><span id="nicknames-passengers-two-history">christine</span></a
+          >
+          -
+          <a
+            href="#"
+            class="btn btn-secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#passengerModal"
+            ><span id="nicknames-passengers-three-history">renaud</span></a
+          >
+          -
+          <a
+            href="#"
+            class="btn btn-secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#passengerModal"
+            ><span id="nicknames-passengers-four-history">nicolas</span></a
           >
         </p>
         <p>Véhicule : <span id="vehicle-history">Renault Clio</span></p>
         <p>Energie : <span id="energy-history">Electrique</span></p>
         <p>Prix : <span id="price-history">150 points</span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#SendNoticeModal"
+        >
+          Mettre un avis
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#SendProblemModal"
+        >
+          Reporter un problème
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Avis -->
+
+<div
+  class="modal fade"
+  id="SendNoticeModal"
+  tabindex="-1"
+  aria-labelledby="SendNoticeMModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SendNoticeMModalLabel">
+          Avis sur le trajet
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group bg-primary p-3 mb-3">
+          <label for="vehicleSelect" class="form-label">Choix de la note</label>
+          <select class="form-select" id="statusSelect" name="status" required>
+            <option selected disabled value="">Choisir une note</option>
+            <option value="OneStar">1 étoile</option>
+            <option value="TwoStars">2 étoiles</option>
+            <option value="ThreeStars">3 étoiles</option>
+            <option value="FourStars">4 étoiles</option>
+            <option value="FiveStars">5 étoiles</option>
+          </select>
+        </div>
+        <textarea
+          class="form-control"
+          id="problemDescription"
+          rows="3"
+          placeholder="Décrivez votre trajet..."
+        ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#SendNoticeConfirmModal"
+        >
+          Enregistrer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Avis Confirmé -->
+
+<div
+  class="modal fade"
+  id="SendNoticeConfirmModal"
+  tabindex="-1"
+  aria-labelledby="SendNoticeConfirmMModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SendNoticeConfirmMModalLabel">
+          Confirmation de l'avis
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Votre avis a été enregistré avec succès.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Probleme -->
+
+<div
+  class="modal fade"
+  id="SendProblemModal"
+  tabindex="-1"
+  aria-labelledby="SendProblemMModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SendProblemMModalLabel">
+          Reporter un problème
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Que voulez-vous signaler ? Expliquez le probleme rencontré le plus
+          clairement possible.
+        </p>
+        <textarea
+          class="form-control"
+          id="problemDescription"
+          rows="3"
+          placeholder="Décrivez le problème rencontré..."
+        ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#SendReportConfirmModal"
+        >
+          Envoyer le signalement
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Signalement Confirmé -->
+
+<div
+  class="modal fade"
+  id="SendReportConfirmModal"
+  tabindex="-1"
+  aria-labelledby="SendReportConfirmMModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SendReportConfirmMModalLabel">
+          Confirmation du signalement
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Votre signalement a été enregistré avec succès, un administrateur vous
+          contactera dans les plus brefs délais.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Passager  -->
+
+<div
+  class="modal fade"
+  id="passengerModal"
+  tabindex="-1"
+  aria-labelledby="passengerModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="passengerModalLabel">Passager</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="/images/default-profile.webp"
+          id="passenger-picture-history"
+          class="card-img-top"
+          alt="Image de profil du passager"
+        />
+        <h2 class="text-center">
+          <span id="passenger-name-history"><b>Nicolas</b></span>
+        </h2>
+        <br />
+        <p>
+          <b>Email</b> :
+          <span id="passenger-email-history">j4o0e@example.com</span>
+        </p>
+        <p>
+          <b>Téléphone</b> :
+          <span id="passenger-phone-history">06 12 34 56 78</span>
+        </p>
+        <p>
+          <b>Compte créé le</b> :
+          <span id="passenger-date-history">01/01/2021</span>
+        </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">

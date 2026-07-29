@@ -1,0 +1,36 @@
+<div class="avis">
+  <hr />
+  <div class="text-center">
+    <h2>Administration</h2>
+  </div>
+  <hr />
+  <div class="d-flex justify-content-center ms-2 me-2 gap-3">
+    <a href="avis">
+      <button
+        id="btn-add-member"
+        type="button"
+        class="btn btn-secondary border mt-4"
+      >
+        Ajouter un membre
+      </button>
+    </a>
+    <a href="avis">
+      <button
+        id="btn-manage-members"
+        type="button"
+        class="btn btn-secondary border mt-4"
+      >
+        Gestion des membres
+      </button>
+    </a>
+    <a href="avis">
+      <button
+        id="btn-reviews"
+        type="button"
+        class="btn btn-secondary border mt-4"
+      >
+        Gestion des avis
+      </button>
+    </a>
+  </div>
+</div>

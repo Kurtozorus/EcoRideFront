@@ -53,6 +53,13 @@ export const allRoutes = [
     [],
     "/js/auth/credit.js",
   ),
+  new Route(
+    "/avis",
+    "Mes avis",
+    "/pages/auth/review.html",
+    [],
+    "/js/auth/review.js",
+  ),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename

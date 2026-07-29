@@ -1,0 +1,698 @@
+<div class="review-scene container-fluid">
+  <div class="review-scene-content">
+    <div class="big-title-review text-center">
+      <h2 class="text-primary background-big-title">
+        Partagez votre trajet, économisez et roulez plus vert
+      </h2>
+      <p class="text-primary background-big-title">
+        Trouver le covoiturage qui vous convient !
+      </p>
+    </div>
+  </div>
+</div>
+<div class="review-main-content">
+  <br />
+  <div class="filter-mobile-admin d-md-none d-sm-none">
+    <div class="d-flex justify-content-center align-items-center gap-1">
+      <div class="d-flex justify-content-center align-items-center gap-1">
+        <button
+          class="btn btn-secondary d-flex justify-content-center align-items-center"
+          data-bs-toggle="modal"
+          data-bs-target="#filterModal"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-gear-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"
+            />
+          </svg>
+          Filtres
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div
+      class="filter-desktop d-none d-lg-flex align-items-center gap-2 p-2 w-70"
+    >
+      <form id="filterCovoiturageForm" class="size-filter-desktop">
+        <!-- Numéro de covoiturage -->
+        <div class="d-flex align-items-center gap-1">
+          <input
+            type="text"
+            class="form-control"
+            id="covoiturageNumberInput"
+            name="covoiturageNumberInput"
+            placeholder="Numéro de covoiturage"
+          />
+          <!-- Pseudo -->
+          <input
+            type="text"
+            id="driverNameInput"
+            name="driverNameInput"
+            class="form-control"
+            placeholder="Pseudo du conducteur"
+          />
+
+          <!-- Email -->
+          <input
+            type="email"
+            id="driverEmailInput"
+            name="driverEmailInput"
+            class="form-control"
+            placeholder="Email du conducteur"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+  <br />
+  <h2 class="text-primary text-center">Votre avis compte !</h2>
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+      <!-- container à gauche -->
+      <div
+        class="col-md-4 col-lg-3 bg-white shadow-sm rounded d-flex justify-content-center"
+      >
+        <div class="teste text-center">
+          <div class="card" style="width: 18rem">
+            <div class="d-flex justify-content-center mt-3">
+              <img
+                src="/images/mauricio-sabino-LT4aKyxXUjw-unsplash.jpg"
+                class="rounded-circle"
+                height="60px"
+                width="60px"
+                alt="..."
+              />
+              <p class="text-secondary text-center">. . . . .</p>
+              <img
+                src="/images/mauricio-sabino-LT4aKyxXUjw-unsplash.jpg"
+                class="rounded-circle"
+                height="60px"
+                width="60px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                Covoiturage :
+                <span class="text-secondary" id="carpooling-number">#123</span>
+              </h5>
+              <p>
+                Pseudo du conducteur :
+                <span class="text-secondary" id="driver-name">John Doe</span>
+              </p>
+              <p>
+                Email du conducteur :
+                <span class="text-secondary" id="driver-email"
+                  >j4o0e@example.com</span
+                >
+              </p>
+              <p>
+                Pseudo du client :
+                <span class="text-secondary" id="client-name">Jane Smith</span>
+              </p>
+              <p>
+                Email du client :
+                <span class="text-secondary" id="client-email"
+                  >j4o0e@example.com</span
+                >
+              </p>
+              <p>
+                Commentaire :
+                <a href="#" data-bs-toggle="modal" data-bs-target="#noticeModal"
+                  ><span class="text-secondary" id="comment"
+                    >Super trajet !</span
+                  ></a
+                >
+              </p>
+              <p>
+                Note :
+                <span class="text-secondary" id="note">5</span>
+              </p>
+              <p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#infosuppModal"
+                >
+                  Informations supplémentaires
+                </a>
+              </p>
+              <p>
+                Votre avis est :
+                <span> en attente de vérification.</span>
+              </p>
+              <p>
+                <a href="#" class="btn btn-secondary"
+                  ><i class="bi bi-check-lg"></i
+                ></a>
+                <a href="#" class="btn btn-danger ps-3 pe-3">X</a>
+              </p>
+            </div>
+            <p class="text-center p-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-exclamation-triangle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"
+                />
+                <path
+                  d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+                />
+              </svg>
+              : Aucun signalement recencé pour cet avis actuellement.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Container milieux -->
+      <div
+        class="col-md-4 col-lg-3 bg-secondary shadow-sm rounded d-flex justify-content-center"
+      >
+        <div class="teste text-center">
+          <div class="card" style="width: 18rem">
+            <div class="d-flex justify-content-center mt-3">
+              <img
+                src="/images/mauricio-sabino-LT4aKyxXUjw-unsplash.jpg"
+                class="rounded-circle"
+                height="60px"
+                width="60px"
+                alt="..."
+              />
+              <p class="text-secondary text-center">. . . . .</p>
+              <img
+                src="/images/mauricio-sabino-LT4aKyxXUjw-unsplash.jpg"
+                class="rounded-circle"
+                height="60px"
+                width="60px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                Covoiturage :
+                <span class="text-secondary" id="carpooling-number">#123</span>
+              </h5>
+              <p>
+                Pseudo du conducteur :
+                <span class="text-secondary" id="driver-name">John Doe</span>
+              </p>
+              <p>
+                Email du conducteur :
+                <span class="text-secondary" id="driver-email"
+                  >j4o0e@example.com</span
+                >
+              </p>
+              <p>
+                Pseudo du client :
+                <span class="text-secondary" id="client-name">Jane Smith</span>
+              </p>
+              <p>
+                Email du client :
+                <span class="text-secondary" id="client-email"
+                  >j4o0e@example.com</span
+                >
+              </p>
+              <p>
+                Commentaire :
+                <a href="#" data-bs-toggle="modal" data-bs-target="#noticeModal"
+                  ><span class="text-secondary" id="comment"
+                    >Super trajet !</span
+                  ></a
+                >
+              </p>
+              <p>
+                Note :
+                <span class="text-secondary" id="note">5</span>
+              </p>
+              <p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#infosuppModal"
+                >
+                  Informations supplémentaires
+                </a>
+              </p>
+              <p>
+                Votre avis est :
+                <span class="text-secondary">
+                  a été validé par un administrateur.</span
+                >
+              </p>
+              <p>
+                <a href="#" class="btn btn-secondary"
+                  ><i class="bi bi-check-lg"></i
+                ></a>
+                <a href="#" class="btn btn-danger ps-3 pe-3">X</a>
+              </p>
+            </div>
+            <p class="text-center p-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-exclamation-triangle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"
+                />
+                <path
+                  d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+                />
+              </svg>
+              : Aucun signalement recencé pour cet avis actuellement.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Container droite -->
+      <div
+        class="col-md-4 col-lg-3 bg-danger shadow-sm rounded d-flex justify-content-center"
+      >
+        <div class="teste text-center">
+          <div class="card" style="width: 18rem">
+            <div class="d-flex justify-content-center mt-3">
+              <img
+                src="/images/mauricio-sabino-LT4aKyxXUjw-unsplash.jpg"
+                class="rounded-circle"
+                height="60px"
+                width="60px"
+                alt="..."
+              />
+              <p class="text-secondary text-center">. . . . .</p>
+              <img
+                src="/images/mauricio-sabino-LT4aKyxXUjw-unsplash.jpg"
+                class="rounded-circle"
+                height="60px"
+                width="60px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                Covoiturage :
+                <span class="text-secondary" id="carpooling-number">#123</span>
+              </h5>
+              <p>
+                Pseudo du conducteur :
+                <span class="text-secondary" id="driver-name">John Doe</span>
+              </p>
+              <p>
+                Email du conducteur :
+                <span class="text-secondary" id="driver-email"
+                  >j4o0e@example.com</span
+                >
+              </p>
+              <p>
+                Pseudo du client :
+                <span class="text-secondary" id="client-name">Jane Smith</span>
+              </p>
+              <p>
+                Email du client :
+                <span class="text-secondary" id="client-email"
+                  >j4o0e@example.com</span
+                >
+              </p>
+              <p>
+                Commentaire :
+                <a href="#" data-bs-toggle="modal" data-bs-target="#noticeModal"
+                  ><span class="text-secondary" id="comment"
+                    >Super trajet !</span
+                  ></a
+                >
+              </p>
+              <p>
+                Note :
+                <span class="text-secondary" id="note">5</span>
+              </p>
+              <p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#infosuppModal"
+                >
+                  Informations supplémentaires
+                </a>
+              </p>
+              <p>
+                Votre avis est :
+                <span class="text-danger"
+                  >Non conforme et n'apparaitrara pas.</span
+                >
+              </p>
+
+              <p>
+                <a href="#" class="btn btn-secondary"
+                  ><i class="bi bi-check-lg"></i
+                ></a>
+                <a href="#" class="btn btn-danger ps-3 pe-3">X</a>
+              </p>
+            </div>
+            <p class="bg-danger text-white text-center p-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-exclamation-triangle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"
+                />
+                <path
+                  d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+                />
+              </svg>
+              : Un signalement a été envoyé par :
+              <span class="text-secondary">John Doe</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal information -->
+
+<div
+  class="modal fade"
+  id="infosuppModal"
+  tabindex="-1"
+  aria-labelledby="infosuppModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="infosuppModalLabel">Informations</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="/images/default-profile.webp"
+          id="driver-picture-history"
+          class="card-img-top"
+          alt="Image de profil du conducteur"
+        />
+        <h2>
+          Trajet <span id="departure-place-history">Romans</span> -
+          <span id="arrival-place-history">Lyon</span>
+        </h2>
+        <p>Conducteur : <span id="driver-name-history">Jean Dupont</span></p>
+        <p>
+          Date de départ : <span id="departure-date-history">15/03/2023</span>
+        </p>
+        <p>Heure de départ : <span id="departure-time-history">15:00</span></p>
+        <p>
+          Date d'arrivée : <span id="arrival-date-history">15/03/2023</span>
+        </p>
+        <p>Heure d'arrivée : <span id="arrival-time-history">17:00</span></p>
+        <p>Temps de trajet : <span id="travel-time-history">2h00</span></p>
+        <p>Passagers : <span id="passengers-history">4</span></p>
+        <p>
+          Pseudo des passagers :
+          <a
+            href="#"
+            class="btn btn-secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#passengerModal"
+            ><span id="nicknames-passengers-one-history">sophie </span></a
+          >
+          -
+          <a
+            href="#"
+            class="btn btn-secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#passengerModal"
+            ><span id="nicknames-passengers-two-history">christine</span></a
+          >
+          -
+          <a
+            href="#"
+            class="btn btn-secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#passengerModal"
+            ><span id="nicknames-passengers-three-history">renaud</span></a
+          >
+          -
+          <a
+            href="#"
+            class="btn btn-secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#passengerModal"
+            ><span id="nicknames-passengers-four-history">nicolas</span></a
+          >
+        </p>
+        <p>Véhicule : <span id="vehicle-history">Renault Clio</span></p>
+        <p>Energie : <span id="energy-history">Electrique</span></p>
+        <p>Prix : <span id="price-history">150 points</span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Avis a lire -->
+
+<div
+  class="modal fade"
+  id="noticeModal"
+  tabindex="-1"
+  aria-labelledby="noticeModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="noticeModalLabel">Avis</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="noticeForm">
+          <div class="col background-conducteur rounded-2 p-3">
+            <div
+              class="d-flex align-items-center gap-2 user-info border-bottom pb-3"
+            >
+              <span class="image-User rounded-circle-"
+                ><img
+                  src="/images/mauricio-sabino-LT4aKyxXUjw-unsplash.jpg"
+                  width="70"
+                  height="70"
+                  class="rounded-circle"
+                  alt=""
+              /></span>
+              <div class="d-flex flex-wrap">
+                <span class="name-User">Mélilylyloula</span>
+                <div class="rating-notice-mobile">
+                  <span class="note-star ms-4">4.5</span>
+                  <i class="bi bi-star-fill ms-1"></i>
+                </div>
+                <div class="rating-notice-desktop ms-5" data-note="4.5"></div>
+              </div>
+            </div>
+            <div
+              class="d-flex justify-content-center pt-3 pb-3 d-flex flex-wrap"
+            >
+              <p class="notice-user">
+                Conduite agressive, mais bon conducteur, parle peu mais ...
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Avis a emettre -->
+
+<div
+  class="modal fade"
+  id="avisModal"
+  tabindex="-1"
+  aria-labelledby="avisModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="avisModalLabel">Avis</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="/images/default-profile.webp"
+          id="passenger-picture-history"
+          class="card-img-top"
+          alt="Image de profil du passager"
+        />
+        <h2>
+          Trajet <span id="departure-place-history">Romans</span> -
+          <span id="arrival-place-history">Lyon</span>
+        </h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Passager  -->
+
+<div
+  class="modal fade"
+  id="passengerModal"
+  tabindex="-1"
+  aria-labelledby="passengerModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="passengerModalLabel">Passager</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="/images/default-profile.webp"
+          id="passenger-picture-history"
+          class="card-img-top"
+          alt="Image de profil du passager"
+        />
+        <h2 class="text-center">
+          <span id="passenger-name-history"><b>Nicolas</b></span>
+        </h2>
+        <br />
+        <p>
+          <b>Email</b> :
+          <span id="passenger-email-history">j4o0e@example.com</span>
+        </p>
+        <p>
+          <b>Téléphone</b> :
+          <span id="passenger-phone-history">06 12 34 56 78</span>
+        </p>
+        <p>
+          <b>Compte créé le</b> :
+          <span id="passenger-date-history">01/01/2021</span>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Filter -->
+
+<div
+  class="modal fade"
+  id="filterModal"
+  tabindex="-1"
+  aria-labelledby="filterModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="filterModalLabel">Filtre</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="filterCovoiturageForm" class="size-filter-desktop">
+          <!-- Numéro de covoiturage -->
+          <div class="gap-1">
+            <input
+              type="text"
+              class="form-control"
+              id="covoiturageNumberInput"
+              name="covoiturageNumberInput"
+              placeholder="Numéro de covoiturage"
+            />
+            <!-- Pseudo -->
+            <input
+              type="text"
+              id="driverNameInput"
+              name="driverNameInput"
+              class="form-control"
+              placeholder="Pseudo du conducteur"
+            />
+
+            <!-- Email -->
+            <input
+              type="email"
+              id="driverEmailInput"
+              name="driverEmailInput"
+              class="form-control"
+              placeholder="Email du conducteur"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
